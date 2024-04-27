@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="saymandbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Authority" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Branslar">
+          <Key>
+            <PropertyRef Name="BransId" />
+          </Key>
+          <Property Name="BransId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BransAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ilcesi">
+          <Key>
+            <PropertyRef Name="IlcesiId" />
+          </Key>
+          <Property Name="IlcesiId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IlcesiAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ili">
+          <Key>
+            <PropertyRef Name="IliId" />
+          </Key>
+          <Property Name="IliId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IlAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Ogrenciler">
+          <Key>
+            <PropertyRef Name="OgrnId" />
+          </Key>
+          <Property Name="OgrnId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OgrnAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrnBolum" Type="int" />
+          <Property Name="OgrnIban" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgrnTc" Type="nvarchar" MaxLength="11" />
+          <Property Name="OkulId" Type="int" />
+        </EntityType>
+        <EntityType Name="Ogretmenler">
+          <Key>
+            <PropertyRef Name="OgretId" />
+          </Key>
+          <Property Name="OgretId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OgretAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="BransId" Type="int" />
+          <Property Name="OgretIban" Type="nvarchar" MaxLength="50" />
+          <Property Name="OgretTc" Type="nvarchar" MaxLength="11" />
+          <Property Name="OkulId" Type="int" />
+        </EntityType>
+        <EntityType Name="okul">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OkulAdi" Type="nvarchar" MaxLength="50" />
+          <Property Name="OkulAdres" Type="nvarchar" MaxLength="50" />
+          <Property Name="OkulVergi" Type="varchar" MaxLength="50" />
+          <Property Name="OkulEmail" Type="nvarchar" MaxLength="50" />
+          <Property Name="OkulTuru" Type="int" />
+          <Property Name="IliId" Type="int" />
+          <Property Name="IlcesiId" Type="int" />
+        </EntityType>
+        <EntityContainer Name="saymandbModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branslar" EntityType="Self.Branslar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ilcesi" EntityType="Self.Ilcesi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ili" EntityType="Self.Ili" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ogrenciler" EntityType="Self.Ogrenciler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ogretmenler" EntityType="Self.Ogretmenler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="okul" EntityType="Self.okul" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="saymandbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="AdminId" />
+          </Key>
+          <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Authority" Type="Byte" />
+        </EntityType>
+        <EntityType Name="Branslar">
+          <Key>
+            <PropertyRef Name="BransId" />
+          </Key>
+          <Property Name="BransId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BransAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ilcesi">
+          <Key>
+            <PropertyRef Name="IlcesiId" />
+          </Key>
+          <Property Name="IlcesiId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IlcesiAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ili">
+          <Key>
+            <PropertyRef Name="IliId" />
+          </Key>
+          <Property Name="IliId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IlAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Ogrenciler">
+          <Key>
+            <PropertyRef Name="OgrnId" />
+          </Key>
+          <Property Name="OgrnId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OgrnAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrnBolum" Type="Int32" />
+          <Property Name="OgrnIban" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgrnTc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="OkulId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Ogretmenler">
+          <Key>
+            <PropertyRef Name="OgretId" />
+          </Key>
+          <Property Name="OgretId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OgretAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BransId" Type="Int32" />
+          <Property Name="OgretIban" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OgretTc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="OkulId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="okul">
+          <Key>
+            <PropertyRef Name="OkulId" />
+          </Key>
+          <Property Name="OkulId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OkulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OkulAdres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OkulVergi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OkulEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OkulTuru" Type="Int32" />
+          <Property Name="IliId" Type="Int32" />
+          <Property Name="IlcesiId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="saymandbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="admin" EntityType="Self.admin" />
+          <EntitySet Name="Branslar" EntityType="Self.Branslar" />
+          <EntitySet Name="Ilcesi" EntityType="Self.Ilcesi" />
+          <EntitySet Name="Ili" EntityType="Self.Ili" />
+          <EntitySet Name="Ogrenciler" EntityType="Self.Ogrenciler" />
+          <EntitySet Name="Ogretmenler" EntityType="Self.Ogretmenler" />
+          <EntitySet Name="okul" EntityType="Self.okul" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="saymandbModelStoreContainer" CdmEntityContainer="saymandbEntities">
+          <EntitySetMapping Name="admin">
+            <EntityTypeMapping TypeName="saymandbModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Authority" ColumnName="Authority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branslar">
+            <EntityTypeMapping TypeName="saymandbModel.Branslar">
+              <MappingFragment StoreEntitySet="Branslar">
+                <ScalarProperty Name="BransId" ColumnName="BransId" />
+                <ScalarProperty Name="BransAd" ColumnName="BransAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ilcesi">
+            <EntityTypeMapping TypeName="saymandbModel.Ilcesi">
+              <MappingFragment StoreEntitySet="Ilcesi">
+                <ScalarProperty Name="IlcesiId" ColumnName="IlcesiId" />
+                <ScalarProperty Name="IlcesiAd" ColumnName="IlcesiAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ili">
+            <EntityTypeMapping TypeName="saymandbModel.Ili">
+              <MappingFragment StoreEntitySet="Ili">
+                <ScalarProperty Name="IliId" ColumnName="IliId" />
+                <ScalarProperty Name="IlAd" ColumnName="IlAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ogrenciler">
+            <EntityTypeMapping TypeName="saymandbModel.Ogrenciler">
+              <MappingFragment StoreEntitySet="Ogrenciler">
+                <ScalarProperty Name="OgrnId" ColumnName="OgrnId" />
+                <ScalarProperty Name="OgrnAd" ColumnName="OgrnAd" />
+                <ScalarProperty Name="OgrnBolum" ColumnName="OgrnBolum" />
+                <ScalarProperty Name="OgrnIban" ColumnName="OgrnIban" />
+                <ScalarProperty Name="OgrnTc" ColumnName="OgrnTc" />
+                <ScalarProperty Name="OkulId" ColumnName="OkulId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ogretmenler">
+            <EntityTypeMapping TypeName="saymandbModel.Ogretmenler">
+              <MappingFragment StoreEntitySet="Ogretmenler">
+                <ScalarProperty Name="OgretId" ColumnName="OgretId" />
+                <ScalarProperty Name="OgretAd" ColumnName="OgretAd" />
+                <ScalarProperty Name="BransId" ColumnName="BransId" />
+                <ScalarProperty Name="OgretIban" ColumnName="OgretIban" />
+                <ScalarProperty Name="OgretTc" ColumnName="OgretTc" />
+                <ScalarProperty Name="OkulId" ColumnName="OkulId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="okul">
+            <EntityTypeMapping TypeName="saymandbModel.okul">
+              <MappingFragment StoreEntitySet="okul">
+                <ScalarProperty Name="OkulId" ColumnName="OkulId" />
+                <ScalarProperty Name="OkulAdi" ColumnName="OkulAdi" />
+                <ScalarProperty Name="OkulAdres" ColumnName="OkulAdres" />
+                <ScalarProperty Name="OkulVergi" ColumnName="OkulVergi" />
+                <ScalarProperty Name="OkulEmail" ColumnName="OkulEmail" />
+                <ScalarProperty Name="OkulTuru" ColumnName="OkulTuru" />
+                <ScalarProperty Name="IliId" ColumnName="IliId" />
+                <ScalarProperty Name="IlcesiId" ColumnName="IlcesiId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

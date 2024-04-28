@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace SaymanProje
 {
-    public partial class Form1 : Form
+    public partial class OkulForm : Form
     {
-        public Form1()
+        public OkulForm()
         {
             InitializeComponent();
-        }
-
-        private void ekleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminForm yeni = new AdminForm();
-            yeni.MdiParent = this;
-            yeni.Show();
         }
     }
 }
